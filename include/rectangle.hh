@@ -26,6 +26,8 @@ public:
     const Vector &operator () ( int row,  int column) const;
 
     rectangle rotacja(double angle, int times);
+
+    void check_length();
     
 
 };

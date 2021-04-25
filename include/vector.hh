@@ -2,6 +2,7 @@
 
 #include "size.hh"
 #include <iostream>
+#include <cmath>
 
 class Vector {
 
@@ -15,7 +16,7 @@ public:
 
     Vector(double [SIZE]);
 
-    bool operator == ( Vector v);
+    bool operator == ( const Vector &v) const;
 
     Vector operator + (const Vector &v);
 
@@ -28,6 +29,8 @@ public:
     const double &operator [] (int index) const;
 
     double &operator [] (int index);
+
+    double length(const Vector &v);
 
 
 };

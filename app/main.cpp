@@ -143,7 +143,7 @@ int main() {
   return d.doSomething() ? 0 : -1;
   */
 
-  std::cout << "o - obrot prostokata o zadany kat\np - przesuniecie prostokata o zadany wektor\nw - wyswietlenie wspolrzednych wierzcholkow\nm - wyswietl menu\nn - narysuj\nk - koniec dzialania programu\n" << std::endl;
+  std::cout << "o - obrot prostokata o zadany kat\np - przesuniecie prostokata o zadany wektor\nw - wyswietlenie wspolrzednych wierzcholkow\nm - wyswietl menu\ns - sprawdz równoleglosc\nn - narysuj\nk - koniec dzialania programu\n" << std::endl;
 
   while(1){
   std::cout << "(m-wyswietl menu) ";
@@ -176,7 +176,11 @@ int main() {
        break;
        
   case 'm':
-       std::cout << "o - obrot prostokata o zadany kat\np - przesuniecie prostokata o zadany wektor\nw - wyswietlenie wspolrzednych wierzcholkow\nm - wyswietl menu\nk - koniec dzialania programu\n" << std::endl;
+       std::cout << "o - obrot prostokata o zadany kat\np - przesuniecie prostokata o zadany wektor\nw - wyswietlenie wspolrzednych wierzcholkow\nm - wyswietl menu\ns - sprawdz równoleglosc\nk - koniec dzialania programu\n" << std::endl;
+       break;
+
+  case 's':
+       prostokat.check_length();
        break;
 
   case 'k':

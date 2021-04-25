@@ -15,7 +15,7 @@ macierz(0,0)  = cos(angle);
 macierz(0,1)  = -sin(angle);
 macierz(1,0)  = sin(angle);
 macierz(1,1)  = cos(angle);
-std::cout << macierz;
+//std::cout << macierz;
 while (i<times)
 {
 wierzcholki[0][0] = macierz * wierzcholki[0][0];
@@ -135,12 +135,12 @@ std::ostream &operator<<(std::ostream &out, const rectangle &rec) {
 Vector &rectangle::operator ()( int row,  int column) {
 
     if (row >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem"; 
+        throw "Error: Macierz jest poza zasiegiem"; 
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
 
     if (column >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
+        throw "Error: Macierz jest poza zasiegiem";
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
 
@@ -160,14 +160,41 @@ Vector &rectangle::operator ()( int row,  int column) {
 const Vector &rectangle::operator() ( int row,  int column) const {
 
     if (row >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
+        throw "Error: Macierz jest poza zasiegiem";
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
 
     if (column >= SIZE) {
-        std::cout << "Error: Macierz jest poza zasiegiem";
+        throw "Error: Macierz jest poza zasiegiem";
         exit(0); // lepiej byłoby rzucić wyjątkiem stdexcept
     }
 
     return wierzcholki[row][column];
 }
+
+
+void rectangle::check_length(){
+
+double b1=wierzcholki[0][0].length(wierzcholki[0][1]);
+double b2=wierzcholki[1][0].length(wierzcholki[1][1]);
+double b3=wierzcholki[0][0].length(wierzcholki[1][0]);
+double b4=wierzcholki[0][1].length(wierzcholki[1][1]);
+if(b1==b2){
+    std::cout<<"sa rowne"<<std::endl;
+}
+else{
+    std::cout<<"nie sa rowne"<<std::endl;
+}
+    //std::cout<<b1<<std::endl;
+    //std::cout<<b2<<std::endl;
+if(b3==b4){
+    std::cout<<"sa rowne"<<std::endl;
+}
+else{
+    std::cout<<"nie sa rowne"<<std::endl;
+}
+    //std::cout<<b3<<std::endl;
+    //std::cout<<b4<<std::endl;
+
+}
+        
