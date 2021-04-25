@@ -135,7 +135,7 @@ TEST_CASE("Matrix - konstruktor parametryczny Matrix(double[2][2])")
 }
 
 
-TEST_CASE("Matrix - operator * (mnożenie macierzy2x2 razy wektor2x1")
+TEST_CASE("Matrix - operator *")
 {
    double correct_tab[2] = {280,280};
 
@@ -151,6 +151,7 @@ TEST_CASE("Matrix - operator * (mnożenie macierzy2x2 razy wektor2x1")
    CHECK(result[i] == correct_tab[i]);
    }
 }     
+
 
 TEST_CASE("Matrix - operator ()") 
 {
@@ -240,22 +241,13 @@ TEST_CASE("rectangle - translacja")
   }
 }
 
-/*
+
 TEST_CASE("rectangle - rotacja o -180 stopni 1 raz")
 {
-  double w1[2] = {-100,-100};
-  double w2[2] = {-100,-150};
-  double w3[2] = {-450,-150};
-  double w4[2] = {-450,-100};
-  Vector correct[2][2] = {{w1,w2},{w3,w4}};
-  rectangle ok = rectangle(correct);
-
+  std::ostringstream out;
   rectangle test = rectangle(wsp); // wsp to Vector[][2] i znajduje sie w rectangle.hh
   test.rotacja(-180,1);
-  for(int i=0;i<SIZE;i++){
-    for(int j=0;j<SIZE;j++){
-      CHECK(test(i,j) == ok(i,j));
-    }
-  }
+  out << test;
+  CHECK("-100 -100 \n-100 -150 \n-450 -150 \n-450 -100 \n" == out.str());
+
 }
-*/
