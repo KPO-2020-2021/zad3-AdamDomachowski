@@ -251,3 +251,12 @@ TEST_CASE("rectangle - rotacja o -180 stopni 1 raz")
   CHECK("-100 -100 \n-100 -150 \n-450 -150 \n-450 -100 \n" == out.str());
 
 }
+
+TEST_CASE("Obliczanie wyznacznika")
+{
+  double wyznacznik;
+  double test[2][2] = {{4,3},{-2,-90}}; Matrix temp;// do testu macierzy dla gausa
+  temp = Matrix(test); //Matrix tempo; znajduje się na samej górze
+  wyznacznik=temp.oblicz_wyzn();
+  CHECK(wyznacznik == -354);
+}

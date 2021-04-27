@@ -22,6 +22,8 @@ public:
     double  &operator () (unsigned int row, unsigned int column);
     
     const double &operator () (unsigned int row, unsigned int column) const;
+
+    double oblicz_wyzn(); //liczy wyznacznik macierzy uzywajac eliminacji gausa
 };
 
 std::istream &operator>>(std::istream &in, Matrix &mat);

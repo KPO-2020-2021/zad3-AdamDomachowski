@@ -160,3 +160,34 @@ std::ostream &operator<<(std::ostream &out, const Matrix &mat) {
     }
     return out;
 }
+
+
+// wykorzystując metodę gausa oblicza wyznacznik
+double Matrix::oblicz_wyzn(){
+ double ratio, wyznacznik = 1;
+	 for(int i=0;i<=SIZE-2;i++)
+	 {
+		  if(value[i][i] == 0.0)
+		  {
+			   throw "Mathematical Error!";
+			   exit(0);
+		  }
+		  for(int j=i+1;j<=SIZE;j++)
+		  {
+			   ratio = value[j][i]/value[i][i];
+
+			   for(int k=0;k<=SIZE;k++)
+			   {
+			  		value[j][k] = value[j][k] - ratio*value[i][k];
+			   }
+		  }
+	 }
+
+	
+    for(int i=0; i<SIZE; i++){
+        wyznacznik = wyznacznik * value[i][i];
+    }
+   //std::cout << "wyznacznik wynosi: "<< wyznacznik << std::endl;
+
+return wyznacznik;
+}

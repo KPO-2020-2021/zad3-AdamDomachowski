@@ -114,8 +114,6 @@ int main() {
   char wybor;
   int ile_razy;
   double kat;
-
-
    //-------------------------------------------------------
    //  Wspolrzedne wierzcholkow beda zapisywane w pliku "prostokat.dat"
    //  Ponizsze metody powoduja, ze dane z pliku beda wizualizowane

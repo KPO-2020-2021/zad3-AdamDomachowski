@@ -36,9 +36,12 @@ std::istream &operator>>(std::istream &in, rectangle &rec);
 std::ostream &operator<<(std::ostream &out, rectangle const &rec);
 
 // wspolrzedne wierzcholkow
-static double a[] = {100,  100};
+static double a[] = {100, 100};
 static double b[] = {100, 150};
-static double c[] = {450,150};
+static double c[] = {450, 150};
 static double d[] = {450, 100};
 static Vector wsp[][SIZE] = {{ a, b},{ c, d}};
+static Vector wizualizacja[][SIZE] = {{ a, b},{ c, d}};
+
+
 

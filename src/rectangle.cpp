@@ -7,6 +7,8 @@
 #include "matrix.hh"
 #include "rectangle.hh"
 
+
+//wykonuje rotacje prostokata o kat zadany n razy
 rectangle rectangle::rotacja(double angle, int times){
 Matrix macierz = Matrix();
 int i=0;
@@ -24,8 +26,6 @@ wierzcholki[1][0] = macierz * wierzcholki[1][0];
 wierzcholki[1][1] = macierz * wierzcholki[1][1];
 i++; 
 }
-
-
 
 return wierzcholki;
 }
@@ -172,6 +172,13 @@ const Vector &rectangle::operator() ( int row,  int column) const {
     return wierzcholki[row][column];
 }
 
+
+/******************************************************************************
+ |  Funktor prostokata                                                        |
+ |  Argumenty:     brak                                                       |
+ |  Zwraca:                                                                   |
+ |      informacje o rownoleglosci bokow                                      |
+ */
 
 void rectangle::check_length(){
 
